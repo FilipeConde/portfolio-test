@@ -1,1 +1,4 @@
-{}
+{
+    "baseUrl": "http://www.filipeconde.com.br",
+    "chromeWebSecurity": false
+}

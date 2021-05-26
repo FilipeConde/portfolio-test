@@ -18,7 +18,7 @@ context('Navigarion Bar', () => {
         cy.get('.strip-gallery-item').should('have.length', 3);
     })
 
-    it.only('deve acessar área "channel" ao clicar no link', () => {
+    it('deve acessar área "channel" ao clicar no link', () => {
         cy.get('.effect6 > :nth-child(3) > .b').click();
         cy.url().should('contain', 'https://www.filipeconde.com.br/channel/');
         cy.get('.feed-layout-one-section > :nth-child(1)').should('be.visible');

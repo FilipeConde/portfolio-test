@@ -13,7 +13,6 @@ context('Navigarion Bar', () => {
     it('deve acessar área "serviços" ao clicar no link', () => {
         cy.get('.effect6 > :nth-child(2) > .b').click();
         cy.url().should('contain', 'https://www.filipeconde.com.br/servicos/');
-        cy.get('.strip-gallery-item').should('have.length', 3);
     })
 
     it('deve acessar área "channel" ao clicar no link', () => {

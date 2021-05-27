@@ -8,8 +8,6 @@ context('Navigarion Bar', () => {
     it('deve acessar área "sobre mim" ao clicar no link', () => {
         cy.get('.effect6 > :nth-child(1) > .b').click();
         cy.url().should('contain', 'https://www.filipeconde.com.br/sobre-mim/');
-        cy.get('.sc-bxivhb').should('be.visible');
-        cy.get('h2').should('contain', 'Oi! Eu sou Filipe');
     })
 
     it('deve acessar área "serviços" ao clicar no link', () => {

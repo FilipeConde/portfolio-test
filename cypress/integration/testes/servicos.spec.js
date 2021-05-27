@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 context('Página "Serviços"', () => {
-    beforeEach(() => {
+    before(() => {
         cy.visit('/servicos');
     })
 

@@ -1,4 +1,5 @@
 {
+    "$schema":"https://on.cypress.io/cypress.schema.json",
     "baseUrl": "http://www.filipeconde.com.br",
     "chromeWebSecurity": false
 }

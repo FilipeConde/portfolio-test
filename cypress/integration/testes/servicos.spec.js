@@ -41,7 +41,7 @@ context('Página "Serviços"', () => {
             cy.get('.thing-grid').should('be.visible');
         })
 
-        it('deve exibir 13 imagens', () => {
+        it('deve exibir 17 imagens', () => {
             cy.scrollTo('bottom').get('.sc-bxivhb').should('be.visible').and('have.length', 17);
         })
         //elaborar teste para navegação de imagem na galeria
@@ -60,7 +60,7 @@ context('Página "Serviços"', () => {
             cy.get('.thing-grid').should('be.visible');
         })
 
-        it('deve exibir 13 imagens', () => {
+        it('deve exibir 7 imagens', () => {
             cy.scrollTo('bottom').get('.sc-bxivhb').should('be.visible').and('have.length', 7);
         })
         //elaborar teste para navegação de imagem na galeria

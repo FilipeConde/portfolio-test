@@ -1,5 +1,11 @@
 {
     "$schema":"https://on.cypress.io/cypress.schema.json",
     "baseUrl": "http://www.filipeconde.com.br",
-    "chromeWebSecurity": false
+    "chromeWebSecurity": false,
+    "video": false,
+    "viewportWidth": 1520,
+    "viewportHeight": 880,
+    "ignoreTestFiles": "*.js",
+    "testFiles": "**/*.{feature,features}",
+    "numTestsKeptInMemory": 1
 }

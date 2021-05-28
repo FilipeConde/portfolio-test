@@ -23,6 +23,5 @@ context('Navigarion Bar', () => {
     it('deve acessar área "contato" ao clicar no link', () => {
         cy.get('.effect6 > :nth-child(4) > .b').click();
         cy.url().should('contain', 'https://www.filipeconde.com.br/contato/');
-
     })
 })

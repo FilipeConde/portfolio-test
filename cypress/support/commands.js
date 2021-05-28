@@ -1,3 +1,4 @@
+/// <reference types="cypress" />
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
@@ -23,3 +24,18 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+import { validate } from 'jsonschema'
+
+Cypress.Commands.add('validateSchema', (res, schema) => {
+    cy.fixture(`schema/${schema}`).as('dataLoader').then(schema => {
+        const validation = validate(res, schema, {required: true, nestedErrors: true});
+        let errors = ''
+        if (!validation.valid) {
+            errors += validation.errors.map(err => {
+                return '\n' + err.message
+            })
+            throw new Error('SCHEMA VALIDATION EROR: ' + errors);
+        }
+    })
+})

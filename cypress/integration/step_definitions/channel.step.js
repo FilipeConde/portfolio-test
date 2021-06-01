@@ -1,19 +1,20 @@
 /// <reference types="cypress" />
 import { Given, When, Then, And, But } from 'cypress-cucumber-preprocessor/steps';
+import { Channel } from '../../pages/Channel.page'
 
 Given('que esteja na area channel', () => {
-    cy.visit('/channel')
+    Channel.acessa_rota();
 })
 
 Then(`deve exibir um artigo em destaque`, () => {
-    cy.get('.big-article-feed-layout-1').should('be.visible');
+    Channel.get_artigo_destaque().should('be.visible');
 })
 
 Then(`deve exibir dois artigos na seção secundária com pequeno resumo`, () => {
-    cy.get('.feed-layout-one-section > :nth-child(2)').scrollIntoView().should('be.visible');
-    cy.get('.feed-layout-one-section > :nth-child(3)').scrollIntoView().should('be.visible');})
+    Channel.get_artigo_secundario_um().scrollIntoView().should('be.visible');
+    Channel.get_artigo_secundario_dois().scrollIntoView().should('be.visible');})
 
 Then(`deve exibir dois cards para outros artigos`, () => {
-    cy.get('.wrapper-list > :nth-child(1)').should('be.visible');
-    cy.get('.wrapper-list > :nth-child(2)').should('be.visible');
+    Channel.get_artigo_extra_um().should('be.visible');
+    Channel.get_artigo_extra_dois().should('be.visible');
 })

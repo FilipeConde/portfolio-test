@@ -1,16 +1,16 @@
-const retrato = '.sc-bxivhb';
-const titulo = 'h2';
+const RETRATO = '.sc-bxivhb';
+const TITULO = 'h2';
 
 export class SobreMim {
     static acessa_rota() {
         cy.visit('/sobre-mim')
     }
 
-    static get_retrato() {
-        return cy.get(retrato);
+    static valida_retrato() {
+        cy.get(RETRATO).should('be.visible');
     }
 
-    static get_titulo() {
-        return cy.get(titulo);
+    static valida_titulo() {
+        cy.get(TITULO).should('contain', 'Oi! Eu sou Filipe');
     }
 }

@@ -7,9 +7,9 @@ Given('que esteja na area sobre mim', () => {
 })
 
 Then(`deve exibir fotografia`, () => {
-    SobreMim.get_retrato().should('be.visible');
+    SobreMim.valida_retrato();
 })
 
 Then(`deve exibir título de apresentação`, () => {
-    SobreMim.get_titulo().should('contain', 'Oi! Eu sou Filipe');
+    SobreMim.valida_titulo();
 })

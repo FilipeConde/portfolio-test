@@ -1,14 +1,15 @@
 /// <reference types="cypress" />
 import { Given, When, Then, And, But } from 'cypress-cucumber-preprocessor/steps';
+import { SobreMim } from '../../pages/SobreMim.page'
 
 Given('que esteja na area sobre mim', () => {
-    cy.visit('/sobre-mim')
+    SobreMim.acessa_rota();
 })
 
 Then(`deve exibir fotografia`, () => {
-    cy.get('.sc-bxivhb').should('be.visible');
+    SobreMim.get_retrato().should('be.visible');
 })
 
 Then(`deve exibir título de apresentação`, () => {
-    cy.get('h2').should('contain', 'Oi! Eu sou Filipe');
+    SobreMim.get_titulo().should('contain', 'Oi! Eu sou Filipe');
 })

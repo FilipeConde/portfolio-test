@@ -6,5 +6,5 @@ Funcionalidade: Channel (blog)
 
         Cenário: validar elementos
             Então deve exibir um artigo em destaque
-            E deve exibir dois artigos na seção secundária com pequeno resumo
-            E deve exibir dois cards para outros artigos
+            E deve exibir 2 artigos na seção secundária com pequeno resumo
+            E deve exibir 2 cards para outros artigos

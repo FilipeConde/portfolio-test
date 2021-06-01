@@ -1,9 +1,7 @@
 
-const artigoDestaque = '.big-article-feed-layout-1';
-const artigoSecundarioUm = '.feed-layout-one-section > :nth-child(2)';
-const artigoSecundarioDois = '.feed-layout-one-section > :nth-child(3)';
-const cardArtigoExtraUm = '.wrapper-list > :nth-child(1)';
-const cardArtigoExtraDois = '.wrapper-list > :nth-child(2)';
+const ARTIGO_DESTAQUE = '.big-article-feed-layout-1';
+const ARTIGO_SECUNDARIO = '.feed-layout-one-section > :nth-child(';
+const CARD_ARTIGO_EXTRA = '.wrapper-list > :nth-child';
 
 
 export class Channel {
@@ -11,23 +9,19 @@ export class Channel {
         cy.visit('/channel')
     }
 
-    static get_artigo_destaque() {
-        return cy.get(artigoDestaque);
+    static valida_artigo_destaque() {
+        cy.get(ARTIGO_DESTAQUE).should('be.visible');
     }
 
-    static get_artigo_secundario_um() {
-        return cy.get(artigoSecundarioUm);
-    }
-    
-    static get_artigo_secundario_dois() {
-        return cy.get(artigoSecundarioDois);
+    static valida_artigos_secundarios(id) {
+        for(let i = 1; i <= id; i++) {
+            cy.get(ARTIGO_SECUNDARIO + (i + 1) + ')').scrollIntoView().should('be.visible');
+        }
     }
 
-    static get_artigo_extra_um() {
-        return cy.get(cardArtigoExtraUm);
-    }
-
-    static get_artigo_extra_dois() {
-        return cy.get(cardArtigoExtraDois);
+    static valida_artigos_extra(id) {
+        for(let i = 1; i <= id; i++) {
+            cy.get(CARD_ARTIGO_EXTRA + `(${i})`).should('be.visible');
+        }
     }
 }

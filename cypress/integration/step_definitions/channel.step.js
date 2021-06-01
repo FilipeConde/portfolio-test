@@ -7,14 +7,13 @@ Given('que esteja na area channel', () => {
 })
 
 Then(`deve exibir um artigo em destaque`, () => {
-    Channel.get_artigo_destaque().should('be.visible');
+    Channel.valida_artigo_destaque();
 })
 
-Then(`deve exibir dois artigos na seção secundária com pequeno resumo`, () => {
-    Channel.get_artigo_secundario_um().scrollIntoView().should('be.visible');
-    Channel.get_artigo_secundario_dois().scrollIntoView().should('be.visible');})
+Then(`deve exibir {int} artigos na seção secundária com pequeno resumo`, (qtd) => {
+        Channel.valida_artigos_secundarios(qtd);
+})
 
-Then(`deve exibir dois cards para outros artigos`, () => {
-    Channel.get_artigo_extra_um().should('be.visible');
-    Channel.get_artigo_extra_dois().should('be.visible');
+Then(`deve exibir {int} cards para outros artigos`, (qtd) => {
+    Channel.valida_artigos_extra(qtd);
 })

@@ -3,7 +3,7 @@ Funcionalidade: Serviços
 
     Contexto: Área Serviços
         Dado que esteja na area Serviços
-        Então deve apresentar acesso para três galerias
+        Então deve apresentar acesso para 3 galerias
 
         Esquema do Cenário: validar elementos da galeria "<galeria>"
             Quando acessar a <ordemGaleria>

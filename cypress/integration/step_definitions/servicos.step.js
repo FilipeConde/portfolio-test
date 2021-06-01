@@ -1,26 +1,27 @@
 /// <reference types="cypress" />
 import { Given, When, Then, And, But } from 'cypress-cucumber-preprocessor/steps';
+import { Servicos } from '../../pages/Servicos.page'
 
 Given('que esteja na area Serviços', () => {
-    cy.visit('/servicos')
+    Servicos.acessa_rota();
 })
 
 When(`acessar a {int}`, ordemGaleria => {
-    cy.get(`.strip-gallery-item:nth-of-type(${ordemGaleria})`).click();
+    Servicos.acessa_galeria(ordemGaleria);
 })
 
-Then(`deve apresentar acesso para três galerias`, () => {
-    cy.get('.strip-gallery-item').should('have.length', 3);
+Then(`deve apresentar acesso para {int} galerias`, qtd => {
+    Servicos.valida_qtd_galerias(qtd);
 })
 
 Then(`deve exibir título {string} em destaque`, galeria => {
-    cy.get('.border').should('be.visible').and('have.text', galeria);
+    Servicos.valida_titulo_galeria(galeria);
 })
 
 Then(`deve exibir galeria de imagens`, () => {
-    cy.get('.thing-grid').should('be.visible');
+    Servicos.area_de_imagens_is_visible();
 })
 
 Then(`deve exibir {int} imagens`, quantidadeImagens => {
-    cy.scrollTo('bottom').get('.sc-bxivhb').should('be.visible').and('have.length', quantidadeImagens);
+    Servicos.imagens_qtd_visivel(quantidadeImagens);
 })
